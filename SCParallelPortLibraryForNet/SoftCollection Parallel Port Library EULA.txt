@@ -1,0 +1,43 @@
+END-USER LICENSE AGREEMENT FOR SOFTCOLLECTION SOFTWARE
+PRODUCT: SoftCollection Parallel Port Library For .NET
+
+IMPORTANT - READ CAREFULLY: IT IS NECESSARY FOR YOU TO READ, UNDERSTAND, AGREE AND BE BOUND TO THE TERMS OF THIS AGREEMENT BEFORE INSTALLING THIS SOFTWARE PRODUCT.  This SoftCollection End-User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity) and SoftCollection ("SOFTCOLLECTION") for the software product(s) listed above, which may include computer software, printed materials, associated software components, "online" or electronic documentation ("SOFTWARE").  By installing, copying, or using this SOFTWARE, you agree to be bound to the terms of this EULA.  If you do not agree to the terms of this EULA, do not use, copy or install this SOFTWARE.
+
+The SOFTWARE is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties.  The SOFTWARE is licensed, not sold.
+
+I. GRANT OF LICENSE. SOFTCOLLECTION grants to you as an individual, a personal, non-exclusive license to use this SOFTWARE solely for internal purposes, as follows:
+
+A. USE.  You may install the SOFTWARE on as many computers as you like, provided that you are the only user of the SOFTWARE and that it is used by you on only one computer at a time.  You may not distribute this SOFTWARE to other developers in a group, unless a license is purchased for each member of the group using the SOFTWARE.
+
+B. BACKUP.  You may make additional copies of the SOFTWARE for backup or archival purposes only.  These copies shall not be used for distribution, such as on a network server or other publicly accessed media.
+
+C. EVALUATION.  Prior to purchasing a license of this SOFTWARE, SOFTCOLLECTION grants a license to use the SOFTWARE free of charge for 5 munutes, each time after this program starts, for the purpose of evaluating whether to purchase an ongoing license to the SOFTWARE, provided the terms of this EULA are followed.
+
+II. ADDITIONAL RIGHTS AND LIMITATIONS.
+
+A. Distribution.  You may not commercially distribute, sub-license, resell, rent, lease or otherwise transfer for any consideration, or reproduce for any such purposes, the SOFTWARE or any modification or derivation thereof, either alone or in conjunction with any other products or programs, except as defined by the section in this EULA under REDISTRIBUTABLE COMPONENTS.
+
+B. Prohibition on Reverse Engineering, Decompilation, and Disassembly.  You may not disassemble, reverse engineer, modify, decompile, or otherwise abuse the intended purpose under this EULA.
+
+C. Transfer.  You may not transfer any of your rights under this EULA to any other individual.
+
+D. Applicable Laws.  You must comply with all applicable laws regarding use of this SOFTWARE.
+
+III. COPYRIGHT.  Title, ownership rights, and intellectual property rights in and to the SOFTWARE shall remain with SOFTCOLLECTION or its suppliers.  The SOFTWARE is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties.  All title and intellectual property rights in and to the content which may be accessed through use of the SOFTWARE is the property of the respective content owner and may be protected by applicable copyright or other intellectual property laws and treaties.  This EULA grants you no rights to use such content.  All rights not expressly granted are reserved by SOFTCOLLECTION.
+
+IV. TERMINATION. Without prejudice to any other rights, SOFTCOLLECTION may terminate this EULA if you fail to comply with the terms and conditions of this EULA.  In such event, you must destroy all copies of the SOFTWARE and related materials.
+
+V. NO WARRANTIES.  SOFTCOLLECTION expressly disclaims any warranty for the SOFTWARE.  THIS SOFTWARE IS PROVIDED "AS IS."  SOFTCOLLECTION ASSUMES NO RISK IF THIS SOFTWARE DOES NOT FUNCTION PROPERLY OR OPERATE ERROR FREE AND SOFTCOLLECTION MAKES NO WARRANTIES, EITHER EXPRESSED OR IMPLIED, WITH RESPECT TO THE SOFTWARE AND/OR ASSOCIATED MATERIALS PROVIDED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. FURTHER, SOFTCOLLECTION SHALL NOT BE LIABLE FOR ANY CLAIMS OR DAMAGES WHATSOEVER, INCLUDING PROPERTY DAMAGE, PERSONAL INJURY, INTELLECTUAL PROPERTY INFRINGEMENT, LOSS OF PROFITS, OR INTERRUPTION OF BUSINESS, OR FOR ANY SPECIAL, CONSEQUENTIAL OR INCIDENTAL DAMAGES, HOWEVER CAUSED, WHETHER ARISING OUT OF BREACH OF WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR OTHERWISE. The entire risk arising out of use or performance of the SOFTWARE remains with you.
+
+VI. LIMITATION OF LIABILITY. In no event shall SOFTCOLLECTION be liable for any damages whatsoever (including, without limitation, damages for loss of business profits, business interruption, loss of business information, or any other pecuniary loss) arising out of the use of or inability to use this SOFTWARE, even if SOFTCOLLECTION has been advised of the possibility of such damages. Because some states/jurisdictions do not allow the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply to you.
+
+VII. REDISTRIBUTABLE COMPONENTS.
+
+A. Redistributable Code.  In addition to the rights granted in Section I, SOFTCOLLECTION grants you a nonexclusive, royalty-free right to reproduce and redistribute files ("REDISTRIBUTABLES") designated as redistributable, provided you comply with the following:
+
+(i) Under SOFTCOLLECTION’s copyright and subject to all the conditions in this agreement, SOFTCOLLECTION authorizes only the licensed, registered user of this product to reproduce and distribute exact copies of the files that SOFTCOLLECTION has designated as REDISTRIBUTABLES.  Copies of REDISTRIBUTABLES may only be distributed with and for the sole purpose of executing application programs permitted under this agreement that you have written using this SOFTWARE.
+
+(ii) If you redistribute the REDISTRIBUTABLES, you agree to: (A) distribute the REDISTRIBUTABLES in object code only in conjunction with and as a part of a software application product developed by you that adds significant and primary functionality to the SOFTWARE ("APPLICATION"); (B) not use SOFTCOLLECTION’s name, logo, or trademarks to market your APPLICATION product; (C) include a valid copyright notice on your APPLICATION; (D) indemnify, hold harmless, and defend SOFTCOLLECTION from and against any claims or lawsuits, including attorney’s fees, that arise or result from the use or distribution of your APPLICATION product; (E) not permit further distribution of the REDISTRIBUTABLES by your end user.
+
+Visit Our Web Site    http://www.soft-collection.com
+Contact Us            support@soft-collection.com

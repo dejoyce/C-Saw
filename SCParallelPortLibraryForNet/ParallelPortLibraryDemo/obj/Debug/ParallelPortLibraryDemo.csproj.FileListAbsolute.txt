@@ -1,0 +1,11 @@
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\SCParallelPortLibraryForNet\ParallelPortLibraryDemo\bin\Debug\ParallelPortLibraryDemo.exe
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\SCParallelPortLibraryForNet\ParallelPortLibraryDemo\bin\Debug\ParallelPortLibraryDemo.pdb
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\SCParallelPortLibraryForNet\ParallelPortLibraryDemo\bin\Debug\ParallelPortLibrary.dll
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\SCParallelPortLibraryForNet\ParallelPortLibraryDemo\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\SCParallelPortLibraryForNet\ParallelPortLibraryDemo\obj\Debug\ParallelPortLibraryDemo.AboutBox.resources
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\SCParallelPortLibraryForNet\ParallelPortLibraryDemo\obj\Debug\ParallelPortLibraryDemo.LedUserControl.resources
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\SCParallelPortLibraryForNet\ParallelPortLibraryDemo\obj\Debug\ParallelPortLibraryDemo.MainFrm.resources
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\SCParallelPortLibraryForNet\ParallelPortLibraryDemo\obj\Debug\ParallelPortLibraryDemo.Properties.Resources.resources
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\SCParallelPortLibraryForNet\ParallelPortLibraryDemo\obj\Debug\ParallelPortLibraryDemo.csproj.GenerateResource.Cache
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\SCParallelPortLibraryForNet\ParallelPortLibraryDemo\obj\Debug\ParallelPortLibraryDemo.exe
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\SCParallelPortLibraryForNet\ParallelPortLibraryDemo\obj\Debug\ParallelPortLibraryDemo.pdb

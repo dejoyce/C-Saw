@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusyBar", "BusyBar\BusyBar.csproj", "{EE1C58C8-B9B7-475C-ADAD-10498EBBC6CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusyBarTestApp", "BusyBarTestApp\BusyBarTestApp.csproj", "{2AD35C2D-52C1-46D3-9889-A36C15D8D822}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EE1C58C8-B9B7-475C-ADAD-10498EBBC6CA} = {EE1C58C8-B9B7-475C-ADAD-10498EBBC6CA}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE1C58C8-B9B7-475C-ADAD-10498EBBC6CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE1C58C8-B9B7-475C-ADAD-10498EBBC6CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE1C58C8-B9B7-475C-ADAD-10498EBBC6CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE1C58C8-B9B7-475C-ADAD-10498EBBC6CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD35C2D-52C1-46D3-9889-A36C15D8D822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD35C2D-52C1-46D3-9889-A36C15D8D822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD35C2D-52C1-46D3-9889-A36C15D8D822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD35C2D-52C1-46D3-9889-A36C15D8D822}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {A104A884-1D88-4F42-BB8B-F2869019A4B0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+C:\Documents and Settings\dejoyce\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.dll
+C:\Documents and Settings\dejoyce\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.pdb
+C:\Documents and Settings\dejoyce\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.xml
+C:\Documents and Settings\dejoyce\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\dejoyce\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\log4net.dll
+C:\Documents and Settings\dejoyce\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\log4net.pdb
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.dll
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.pdb
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.xml
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\log4net.dll
+C:\Documents and Settings\admin\My Documents\Visual Studio 2008\Projects\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\log4net.pdb
+C:\Users\dejoyce\Documents\Visual Studio 2010\Projects\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.dll
+C:\Users\dejoyce\Documents\Visual Studio 2010\Projects\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.pdb
+C:\Users\dejoyce\Documents\Visual Studio 2010\Projects\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.xml
+C:\Users\dejoyce\Documents\Visual Studio 2010\Projects\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dejoyce\Documents\Visual Studio 2010\Projects\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\log4net.dll
+C:\Users\dejoyce\Documents\Visual Studio 2010\Projects\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\log4net.pdb
+C:\Development\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.dll
+C:\Development\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.pdb
+C:\Development\TemperatureMonitor\log4net-1.2.10\build\bin\net\1.0\debug\log4net.xml
+C:\Development\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\log4net.csprojResolveAssemblyReference.cache
+C:\Development\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\log4net.dll
+C:\Development\TemperatureMonitor\log4net-1.2.10\src\obj\Debug\log4net.pdb
