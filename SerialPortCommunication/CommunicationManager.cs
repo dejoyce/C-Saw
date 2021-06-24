@@ -10,6 +10,7 @@ using TemperatureMonitor;
 
 using log4net;
 using log4net.Config;
+using System.Text.RegularExpressions;
 //*****************************************************************************************
 //                           LICENSE INFORMATION
 //*****************************************************************************************
@@ -468,11 +469,12 @@ namespace PCComm
                 case TransmissionType.Text:
                     //read data waiting in the buffer
 
-                                        logger.Info(comPort.BytesToRead + " bytesToRead [" + message + "]");
+                    logger.Info(comPort.BytesToRead + " bytesToRead [" + message + "]");
                     logger.Info( comPort.BaudRate + "|" + comPort.BytesToRead + "|" + comPort.ReadBufferSize + "|" + comPort.ReadTimeout + "|" + comPort.ReceivedBytesThreshold + "|");
 
                     message = comPort.ReadExisting();
-                    
+
+                    logger.Info(comPort.BytesToRead + " bytesToRead [" + message + "]");
 
                     break;
                 //user chose binary
@@ -496,8 +498,6 @@ namespace PCComm
                     break;
             }
            
-
-
             try
             {
                 String messageToSave = DateTime.Now.ToString() + DateTime.Now.Millisecond + "   [";
@@ -553,12 +553,28 @@ namespace PCComm
                     writeFile = true;
                 }
 
+                logger.Info(comPort.BytesToRead + " bytesToRead [" + message + "]");
+                logger.Info("writeFile: " + writeFile);
+
                 if (writeFile == true)
                 {
                     StreamWriter writer = new StreamWriter("c:\\DataFiles\\RawData.txt", true);
                     writer.WriteLine(DateTime.Now.Ticks + "," + DateTime.Now.ToString() + DateTime.Now.Millisecond + "   [" + message + "]");
                     writer.Close();
                 }
+
+                try
+                {
+                    string msg = Regex.Replace(message, @"/.?()>[^0-9a-zA-Z:,]+ ", "");
+                    StreamWriter writer = new StreamWriter("c:\\DataFiles\\AllTheDataRawData.txt", true);
+                    writer.WriteLine(DateTime.Now.Ticks + "," + DateTime.Now.ToString() + DateTime.Now.Millisecond + "   [" + msg + "]");
+                    writer.Close();
+                }
+                catch (Exception ex)
+                {
+
+                }
+
             }
             catch( Exception ex )
             {
