@@ -28,6 +28,8 @@ using PCComm;
 using log4net;
 using log4net.Config;
 using System.Threading;
+using System.Text.RegularExpressions;
+
 
 
 namespace TemperatureMonitor
@@ -40,12 +42,12 @@ namespace TemperatureMonitor
         private static readonly ILog logger = LogManager.GetLogger(typeof(MainForm));
 
         public static String DATA_FILES_LOCATION = "c:\\DataFiles\\History\\";
-        public static String BACKUP_DATA_FILES_LOCATION = "K:\\";
-
+        public static String BATCHID_DATA_FILE = "c:\\DataFiles\\Backup\\BatchIds.txt";
         public static String RAW_DATA_FILE = "c:\\DataFiles\\RawData.txt";
         public static String BACKUP_DATA_STORE = "c:\\DataFiles\\Backup\\DataBackup.txt";
         private String OUT_OF_CYCLE_DATA_FILES_LOCATION = "c:\\DataFiles\\OutOfCycle\\";
         private String DATA_FILE_EXTENSION = ".dat";
+        private String BATCH_ID= "BatchId:";
 
         public delegate TreeNode GetNode(String data);
         public delegate void AddNode(TreeNode tNode, TreeNode nodeName);
@@ -70,6 +72,8 @@ namespace TemperatureMonitor
         String cycleName = "";
         String rawDataFileName = "";
 
+        Boolean selectedNodeAlreadyHasBatchId = false;
+
         PointPairList listMc, listEmc, listTa, listTw;
         PointPairList listHistoryMc, listHistoryEmc, listHistoryTa, listHistoryTw;
 
@@ -93,9 +97,6 @@ namespace TemperatureMonitor
 
             try
             {
-
-
-
                 // Determine whether the directory exists.
                 if (!Directory.Exists(OUT_OF_CYCLE_DATA_FILES_LOCATION))
                 {
@@ -104,16 +105,12 @@ namespace TemperatureMonitor
                     logger.Info("The directory was created successfully at " + Directory.GetCreationTime(OUT_OF_CYCLE_DATA_FILES_LOCATION));
                 }
 
-                Directory.CreateDirectory(DATA_FILES_LOCATION);
-
             }
             catch (Exception e)
             {
                 logger.Info("The process failed: " + e.ToString());
             }
             finally { }
-
-            copyDataFilesFromBackup();
 
             InitializeComponent();
 
@@ -179,64 +176,6 @@ namespace TemperatureMonitor
 
 
             logger.Debug("Exiting MainForm ctor.");
-        }
-
-        private void copyDataFilesFromBackup()
-        {
-            try
-            {
-                logger.Debug("Entering copyDataFilesFromBackup");
-
-                String remoteKilnDirectory = System.Configuration.ConfigurationSettings.AppSettings["RemoteKilnDirectory"];// cboBaud.Text;
-
-                if (remoteKilnDirectory == null)
-                {
-                    remoteKilnDirectory = BACKUP_DATA_FILES_LOCATION;
-                }
-
-                DirectoryInfo di = new DirectoryInfo(remoteKilnDirectory);
-                FileSystemInfo[] files = di.GetFileSystemInfos();
-
-                foreach (FileSystemInfo i in files)
-                {
-                    try
-                    {
-                        FileInfo file = new FileInfo(i.FullName);
-                        logger.Debug("Checking if " + i.FullName + " exists in " + DATA_FILES_LOCATION);
-
-                        FileInfo destFile = new FileInfo(Path.Combine(DATA_FILES_LOCATION, file.Name));
-                        if (destFile.Exists)
-                        {
-                            if (file.LastWriteTime > destFile.LastWriteTime)
-                            {
-                                // now you can safely overwrite it
-                                logger.Debug("File Exists and is older, it will be overwrote. " + destFile.FullName);
-                                file.CopyTo(destFile.FullName, true);
-                            }
-                            else
-                            {
-                                logger.Debug("File Exists and same write date, file will NOT be overwrote." + destFile.FullName);
-                            }
-                        }
-                        else
-                        {
-                            logger.Debug("Copying file to " + destFile.FullName);
-                            file.CopyTo(destFile.FullName, true);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        logger.Warn(ex.StackTrace);
-                    }
-                }
-                logger.Debug("Exiting copyDataFilesFromBackup");
-            }
-            catch( Exception ex )
-            {
-                logger.Error(ex.StackTrace);
-            }
-
-
         }
 
         private void UpdateComStatus(String message)
@@ -659,6 +598,8 @@ namespace TemperatureMonitor
                     return;
                 }
 
+                this.textBoxBatchId.Text = this.findBatchId(selectedNode.Name );
+
                 GraphPane myPane = this.zedGraphControlHistoryDisplay.GraphPane;
 
                 listHistoryMc.Clear();
@@ -667,6 +608,7 @@ namespace TemperatureMonitor
                 listHistoryTw.Clear();
                 this.textBoxStartTimeHistory.Text = "";
                 textBoxDurationHistory.Text = "";
+               // this.textBoxBatchId.Text = "";
 
                 Boolean bStartDatePopulated = false;
                 DateTime startDateTime = DateTime.Now, endDateTime = DateTime.Now;
@@ -675,8 +617,25 @@ namespace TemperatureMonitor
                 FileDataReader data;
                 StreamReader re = File.OpenText(selectedNode.Name);
                 string input = null;
+
+                selectedNodeAlreadyHasBatchId = false;
                 while ((input = re.ReadLine()) != null)
                 {
+                    if(input.StartsWith( BATCH_ID, true, null ))
+                    {
+                        logger.Debug(selectedNode.Name + " batchId line is" + input );
+
+                        String batchId = input.Substring( BATCH_ID.Length, input.Length - BATCH_ID.Length);
+
+                        logger.Debug("batchId: computed as "  );
+
+                        this.textBoxBatchId.Text = batchId;
+
+                        selectedNodeAlreadyHasBatchId = true;
+
+                        continue;
+                    }
+
                     data = new FileDataReader();
                     data.readDataFromFile(input);
                     // create row and add to data to file
@@ -761,6 +720,110 @@ namespace TemperatureMonitor
             logger.Debug("Exiting treeViewExistingData_AfterSelect");
         }
 
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private String findBatchId( String fileName )
+        {
+            logger.Debug("findBatchId " + fileName );
+
+            if( fileName.Equals((String.Empty)))
+            {
+                return null;
+            }
+
+            string batchId = null; 
+            try
+            {               
+                StreamReader re = File.OpenText(BATCHID_DATA_FILE);
+                string input = null;
+                while ((input = re.ReadLine()) != null)
+                {
+                    if (input.Contains(fileName))
+                    {
+                        logger.Debug("Found BatchId: " + input);
+
+                        int startIndex = input.IndexOf("#");
+
+                        if (startIndex != -1)
+                        {
+                            batchId = input.Substring(startIndex + 1, input.Length - startIndex - 1);
+                        }
+                    }
+                }
+
+                re.Close();
+               }
+                catch (Exception ex)
+                {
+                    logger.Error("Exception writing to file: " + ex.Message);
+                }
+
+            return batchId;
+        }
+
+
+
+
+
+        private void buttonSaveBatchId_Click(object sender, EventArgs e)
+        {
+            try
+            {                    
+                String batchId = textBoxBatchId.Text;
+
+                TreeNode selectedNode = this.treeViewExistingData.SelectedNode;
+
+                if (selectedNode == null)
+                {
+                    return;
+                }
+
+                if (selectedNode.Name.Equals(String.Empty))
+                {
+                    return;
+                }
+
+                try
+                {
+                    logger.Debug(selectedNode.Name + " Saving batchId: " + batchId);
+
+                    StreamWriter writer = new StreamWriter(BATCHID_DATA_FILE, true);
+
+                    // add to 1st line
+                    writer.WriteLine(selectedNode.Name + "#" + batchId );
+
+                    writer.Close();
+                }
+                catch (Exception ex)
+                {
+                    logger.Error("Exception writing to file: " + ex.Message);
+                }
+
+            }
+            catch (Exception eff)
+            {
+                logger.Info(eff.Message);
+            }
+        }
+
+        private void label11_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public static String processLine(String input)
         {
             String data = "";
@@ -792,6 +855,7 @@ namespace TemperatureMonitor
             string input = null;
             while ((input = re.ReadLine()) != null)
             {
+
                 String data = "";
                 try
                 {
@@ -950,17 +1014,41 @@ namespace TemperatureMonitor
             {
                 try
                 {
+                    Thread.Sleep(3000);
+                   // Thread.Sleep(300000);
+                    logger.Debug("Waking UP");
 
-                    Thread.Sleep(300000);
 
-                    Console.WriteLine("DataUpdater is running.");
+                    TwilioClient.Init(
+              Environment.GetEnvironmentVariable("TWILIO_ACCOUNT_SID"),
+              Environment.GetEnvironmentVariable("TWILIO_AUTH_TOKEN")
 
-                    StreamReader rawDataFile = File.OpenText(MainForm.RAW_DATA_FILE);
+
+
+
+
+                   StreamReader rawDataFile = File.OpenText(MainForm.RAW_DATA_FILE);
                     string processedData = null, processedDateTimeMilli = null;
 
                     string input = null;
+                  //  string derekTest = null;
+
                     while ((input = rawDataFile.ReadLine()) != null)
-                    {
+                    {/*
+                        try
+                        {
+                            string tttt = input.Split('[', ']')[1];
+                            derekTest += Regex.Replace(tttt, @"/.?()>[^0-9a-zA-Z:,]+ ", "") ;
+                            logger.Debug("" + derekTest);
+                        }
+                        catch(Exception ex)
+                        {
+
+                        }
+                        continue;
+                        logger.Debug("input: " + input);
+                        */
+
                         String data = "";
                         try
                         {
@@ -981,10 +1069,16 @@ namespace TemperatureMonitor
                                 int startIndex = data.IndexOf("- ");
                                 int endIndex = data.IndexOf("]");
                                 data = data.Substring(startIndex + 1, endIndex - startIndex - 1);
+                                logger.Debug("Data1:" + data);
 
                                 data = data + MainForm.processLine(rawDataFile.ReadLine());
+                                logger.Debug("Data2:" + data);
+
                                 data = data + MainForm.processLine(rawDataFile.ReadLine());
+                                logger.Debug("Data3:" + data);
+
                                 data = data + MainForm.processLine(rawDataFile.ReadLine());
+                                logger.Debug("Data4:" + data);
 
                                 string[] items1 = data.Trim().Split(' ');
                                 data = "";
@@ -998,7 +1092,7 @@ namespace TemperatureMonitor
                                 }
 
                                 data = dateTimeMilli + "," + dateTime + data;
-                                logger.Debug("data:" + data);
+                                logger.Debug("Final Data:" + data);
 
                                 try
                                 {
@@ -1124,6 +1218,8 @@ namespace TemperatureMonitor
                 {
                     logger.Error("Exception writing to file: " + ex.Message);
                 }
+
+                logger.Debug("Going back SLEEP");
             }
         }
 
